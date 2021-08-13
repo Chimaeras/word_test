@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.joker.mapper.WordMapper">
+
+    <select id="queryWordList" resultType="com.joker.pojo.Word">
+        select *
+        from word_test.englishwords;
+    </select>
+
+    <select id="queryById" resultType="com.joker.pojo.Word">
+        select *
+        from word_test.englishwords
+        where id = #{id};
+    </select>
+
+    <select id="countTotal" resultType="java.lang.Integer">
+        select count(*)
+        from word_test.englishwords;
+    </select>
+
+    <select id="queryByLocal" resultType="com.joker.pojo.Word">
+        select *
+        from word_test.englishwords
+        where loca = #{loca};
+    </select>
+
+    <select id="queryByWord" resultType="com.joker.pojo.Word">
+        select *
+        from word_test.englishwords
+        where word = #{word};
+    </select>
+
+</mapper>
